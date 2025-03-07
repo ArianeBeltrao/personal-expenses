@@ -15,9 +15,7 @@ Future Features
 
 - Edit added expenses.
 
-- Calculate and display the total spent during the week.
-
 - Calculate and display the total spent during the month.
 
-![alt text](image.png)
-![alt text](image-1.png)
+![alt text](image-3.png)
+![alt text](image-2.png)
