@@ -47,8 +47,16 @@ class TransactionList extends StatelessWidget {
                   radius: 30,
                   backgroundColor: Theme.of(context).colorScheme.primary,
                   child: Padding(
-                    padding: const EdgeInsets.all(6),
-                    child: FittedBox(child: Text('R\$${tr.value}')),
+                    padding: const EdgeInsets.all(8),
+                    child: FittedBox(
+                      child: Text(
+                        'R\$ ${tr.value}',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
                 title: Text(
@@ -58,7 +66,7 @@ class TransactionList extends StatelessWidget {
                 subtitle: Text(DateFormat('d MMM y').format(tr.date)),
                 trailing: IconButton(
                   onPressed: () => onRemove(tr.id),
-                  color: Theme.of(context).colorScheme.error,
+                  color: Theme.of(context).colorScheme.primary,
                   icon: Icon(Icons.delete),
                 ),
               ),

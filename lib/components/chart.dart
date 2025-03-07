@@ -76,7 +76,7 @@ class Chart extends StatelessWidget {
               children: [
                 Text(
                   "Total expenses this week: $_weekTotalValue",
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
               ],
             ),
