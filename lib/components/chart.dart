@@ -48,22 +48,39 @@ class Chart extends StatelessWidget {
       margin: EdgeInsets.all(20),
       child: Padding(
         padding: const EdgeInsets.all(10.0),
-        child: Row(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children:
-              groupedTransactions.map((tr) {
-                return Flexible(
-                  fit: FlexFit.tight,
-                  child: ChartBar(
-                    label: tr['day'] as String,
-                    value: tr['value'] as double,
-                    percentage:
-                        _weekTotalValue == 0
-                            ? 0
-                            : (tr['value'] as double) / _weekTotalValue,
-                  ),
-                );
-              }).toList(),
+          children: [
+            SizedBox(
+              height: 150,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children:
+                    groupedTransactions.map((tr) {
+                      return Flexible(
+                        fit: FlexFit.tight,
+                        child: ChartBar(
+                          label: tr['day'] as String,
+                          value: tr['value'] as double,
+                          percentage:
+                              _weekTotalValue == 0
+                                  ? 0
+                                  : (tr['value'] as double) / _weekTotalValue,
+                        ),
+                      );
+                    }).toList(),
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Total expenses this week: $_weekTotalValue",
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
