@@ -25,7 +25,7 @@ class Chart extends StatelessWidget {
       }
 
       print(DateFormat.E().format(weekDay)[0]);
-      print(totalSum);
+      print('total sum: ${totalSum}');
 
       // E = sigla do dia da semana
       return {'day': DateFormat.E().format(weekDay)[0], 'value': totalSum};

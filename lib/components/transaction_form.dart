@@ -55,13 +55,13 @@ class _TransactionFormState extends State<TransactionForm> {
             TextField(
               controller: _titleController,
               onSubmitted: (_) => _submitForm(),
-              decoration: InputDecoration(labelText: 'Título'),
+              decoration: InputDecoration(labelText: 'Title'),
             ),
             TextField(
               controller: _valueController,
               keyboardType: TextInputType.numberWithOptions(decimal: true),
               onSubmitted: (_) => _submitForm(),
-              decoration: InputDecoration(labelText: 'Valor (R\$)'),
+              decoration: InputDecoration(labelText: 'Amount (R\$)'),
             ),
             Container(
               height: 70,
@@ -70,14 +70,14 @@ class _TransactionFormState extends State<TransactionForm> {
                   Expanded(
                     child: Text(
                       _selectedDate == null
-                          ? 'Nenhuma data selecionada!'
-                          : 'Data selecionada: ${DateFormat('dd/MM/y').format(_selectedDate!)}',
+                          ? 'No date selected!'
+                          : 'Selected date: ${DateFormat('dd/MM/y').format(_selectedDate!)}',
                     ),
                   ),
                   TextButton(
                     onPressed: _showDatePicker,
                     child: Text(
-                      'Selecionar data',
+                      'Select date',
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                   ),
@@ -89,7 +89,7 @@ class _TransactionFormState extends State<TransactionForm> {
               children: [
                 ElevatedButton(
                   onPressed: _submitForm,
-                  child: Text('Nova Transação'),
+                  child: Text('New Transaction'),
                 ),
               ],
             ),

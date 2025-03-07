@@ -101,7 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
         MediaQuery.of(context).orientation == Orientation.landscape;
 
     final appBar = AppBar(
-      title: Text('Despesas Pessoais'),
+      title: Text('Personal Expenses'),
       actions: <Widget>[
         if (isLandscape)
           IconButton(
